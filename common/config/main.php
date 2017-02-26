@@ -14,14 +14,15 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        /*
+        
         'session' => [
             'class' => 'yii\web\DbSession',
             // 'db' => 'mydb',  // ID компонента для взаимодействия с БД. По умолчанию 'db'.
             // 'sessionTable' => 'my_session', // название таблицы для хранения данных сессии. По умолчанию 'session'.
         ],
-        /* */
+        /* 
         'urlManager' => [
+        	'class' => 'yii\web\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
@@ -33,7 +34,12 @@ return [
                 [
                     'pattern' => '<controller>/<action>',
                     'route' => '<controller>/<action>',
-                    'suffix' => '.html'
+                    'suffix' => ''
+                ],
+                [
+                    'pattern' => '<controller>/<action>/<id:\d+>',
+                    'route' => '<controller>/<action>',
+                    'suffix' => ''
                 ],
                 [
                     'pattern' => '<module>/<controller>/<action>/<id:\d+>',
@@ -43,7 +49,7 @@ return [
                 [
                     'pattern' => '<module>/<controller>/<action>',
                     'route' => '<module>/<controller>/<action>',
-                    'suffix' => '.html'
+                    'suffix' => ''
                 ],
             ],
         ],

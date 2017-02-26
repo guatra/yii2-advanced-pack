@@ -11,6 +11,7 @@ use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
 AppAsset::register($this);
+\Yii::$app->language = 'ru-RU';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -28,14 +29,17 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => '1',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Home', 'url' => ['/gii/index']],
+        ['label' => 'Languages', 'url' => ['/languages/index']],
+        ['label' => 'Message', 'url' => ['/message/index']],
+        ['label' => 'SourceMessage', 'url' => ['/source-message/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
